@@ -3,7 +3,13 @@
 const path = require("path");
 const fs = require("fs");
 
-// reading the file
+fs.readFile(path.join(__dirname, "Files", "reply.txt"), (err, data) => {
+  if (err) throw err;
+  console.log(data.toString());
+  console.log("Read is complete");
+});
+
+// writing , appending and renmaing the filename
 fs.writeFile(
   path.join(__dirname, "Files", "reply.txt"),
   "Your Txt is here",
